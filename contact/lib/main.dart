@@ -12,41 +12,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-  return MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(title: Text('금호동3가')),
-      body: Container(
-        height: 300,
-        padding: EdgeInsets.all(10),
-        child: Row(
-          children: [
-            Flexible(child: Image.asset('camera.jpeg'), flex: 3),
-            Flexible(child: Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)', style: TextStyle(fontSize: 20.0, height: 2.0)),
-                  Text('성동구 행당동 . 끌올 10분 전', style: TextStyle(fontSize: 20.0, height: 2.0)),
-                  Text('210,000원', style: TextStyle(fontSize: 20.0, height: 2.0)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(Icons.favorite),
-                      Text('4', style: TextStyle(fontSize: 20.0, height: 2.0)),
-                    ],
-                  )
-                ],
-              ),
-            ), flex: 7) 
-          ],
-        ),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(),
+        body: sizeBox,
     ));
   }
 }
+
+// 변수에 저장하는 방법
+var sizeBox = SizedBox(
+  child: Text('안녕'),
+);
+
+// 클래스, 함수에 저장하는 방법
+class ShopItem extends StatelessWidget {
+  const ShopItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Text('안녕'),
+    );
+  }
+}
+
+// 재사용 많은 UI, 큰 페이지들을 커스텀 위젯으로 생성!
+
 
 // 위젯 4가지 요소: 글자, 이미지, 아이콘, 박스
 // 1. Text('')
