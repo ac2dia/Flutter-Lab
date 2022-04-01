@@ -15,49 +15,36 @@ class MyApp extends StatelessWidget {
 
   return MaterialApp(
     home: Scaffold(
-      appBar: AppBar(title: Text('금호동3가'),),
-      body:
-        Row(
-          children: <Widget>[
-            Container(
-              width: 200,
-              height: 200,
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: ExactAssetImage('camera.jpeg'),
-                  fit: BoxFit.fitHeight,
-                ),
-              ),  
-            ),
-            Container(
-              width: 400,
-              height: 200,
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
+      appBar: AppBar(title: Text('금호동3가')),
+      body: Container(
+        height: 300,
+        padding: EdgeInsets.all(10),
+        child: Row(
+          children: [
+            Flexible(child: Image.asset('camera.jpeg'), flex: 3),
+            Flexible(child: Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
               child: Column(
-                children: <Widget>[
-                  SizedBox(width: 390, height: 45, child: Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD 포함)')),
-                  SizedBox(width: 390, height: 45, child: Text('성동구 행당동 . 끌올 10분 전')),
-                  SizedBox(width: 390, height: 45, child: Text('210,000원')),
-                  SizedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Icon(Icons.favorite, color: Colors.pink),
-                        Text('4'),
-                      ],
-                    )
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)', style: TextStyle(fontSize: 20.0, height: 2.0)),
+                  Text('성동구 행당동 . 끌올 10분 전', style: TextStyle(fontSize: 20.0, height: 2.0)),
+                  Text('210,000원', style: TextStyle(fontSize: 20.0, height: 2.0)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(Icons.favorite),
+                      Text('4', style: TextStyle(fontSize: 20.0, height: 2.0)),
+                    ],
                   )
                 ],
               ),
-            ),
-          ]
+            ), flex: 7) 
+          ],
         ),
-        
-      )
-    );
+      ),
+    ));
   }
 }
 
