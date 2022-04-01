@@ -13,83 +13,106 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        body: ListView( // ListView() 를 통해 스크롤바 생성 + 스크롤 위치 확인 가능 + 메모리 절약
-          children: [
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-            Text('안녕'),
-          ],
-        ),
+        home: Scaffold(
+      appBar: AppBar(),
+      body: UserListView(),
     ));
+  }
+}
+
+class UserListView extends StatelessWidget {
+  const UserListView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RowContainer(
+              color: Colors.red,
+              icon: Icons.man,
+              name: '홍길동',
+            ),
+            RowContainer(
+              color: Colors.yellow,
+              icon: Icons.people,
+              name: '임꺽정',
+            ),
+            RowContainer(
+              color: Colors.green,
+              icon: Icons.woman,
+              name: '장만옥',
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class RowContainer extends StatelessWidget {
+  const RowContainer({Key? key, this.color, this.icon, this.name})
+      : super(key: key);
+
+  final Color? color;
+  final IconData? icon;
+  final String? name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        IconContainer(
+          color: color,
+          icon: icon,
+        ),
+        TextContainer(
+          name: name,
+        )
+      ],
+    );
+  }
+}
+
+class IconContainer extends StatelessWidget {
+  const IconContainer({Key? key, this.color, this.icon}) : super(key: key);
+
+  final Color? color;
+  final IconData? icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+            border: Border.all(
+          width: 1,
+          color: color!,
+        )),
+        child: Icon(icon!));
+  }
+}
+
+class TextContainer extends StatelessWidget {
+  const TextContainer({Key? key, this.name}) : super(key: key);
+
+  final String? name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+          border: Border.all(
+        width: 1,
+        color: Colors.black,
+      )),
+      child: Text(name!),
+    );
   }
 }
 
