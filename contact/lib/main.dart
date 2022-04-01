@@ -15,27 +15,84 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: sizeBox,
+        body: ListView( // ListView() 를 통해 스크롤바 생성 + 스크롤 위치 확인 가능 + 메모리 절약
+          children: [
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+            Text('안녕'),
+          ],
+        ),
     ));
   }
 }
 
-// 변수에 저장하는 방법
-var sizeBox = SizedBox(
-  child: Text('안녕'),
-);
-
-// 클래스, 함수에 저장하는 방법
-class ShopItem extends StatelessWidget {
-  const ShopItem({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Text('안녕'),
-    );
-  }
-}
 
 // 재사용 많은 UI, 큰 페이지들을 커스텀 위젯으로 생성!
 
